@@ -168,7 +168,9 @@ open class LauncherActivity : AppCompatActivity(), OnAppClickListener,
             saveNotes()
     }
 
-    override fun onBackPressed() {}
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
     private fun loadNotes() {
         val notes = File(getExternalFilesDir(null), "notes.txt")
         try {

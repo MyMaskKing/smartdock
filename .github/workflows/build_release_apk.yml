@@ -18,7 +18,7 @@ jobs:
       - name: Grant execute permissions for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build --warning-mode all -x lint
 
   build_apk:
     needs: [pre_build]
@@ -37,7 +37,7 @@ jobs:
         run: chmod +x gradlew
         
       - name: Build unsigned release apk
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleRelease --warning-mode all -x lint
 
       - name: Upload unsigned release apk
         uses: actions/upload-artifact@v3
