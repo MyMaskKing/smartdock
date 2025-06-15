@@ -40,7 +40,8 @@ jobs:
         run: ./gradlew assembleRelease --warning-mode all -x lint
 
       - name: Upload unsigned release apk
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: apk-release
           path: app/build/outputs/apk/release
+          compression-level: 0
